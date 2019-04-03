@@ -1,0 +1,4 @@
+﻿swagger:Permite tener una pagina inicio con la información de los servicios, 
+--se implementa swagger, esto con el siguiente comando
+PM> Install-Package Swashbuckle.AspNetCore
+

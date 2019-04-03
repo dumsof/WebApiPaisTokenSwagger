@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiPais</name>
+    </assembly>
+    <members>
+        <member name="T:WebApiPais.Controllers.CuentaUsuarioController">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Controllers.CuentaUsuarioController" />
+            </summary>
+        </member>
+        <member name="F:WebApiPais.Controllers.CuentaUsuarioController._userManager">
+            <summary>
+            Defines the _userManager
+            </summary>
+        </member>
+        <member name="F:WebApiPais.Controllers.CuentaUsuarioController._signInManager">
+            <summary>
+            Defines the _signInManager
+            </summary>
+        </member>
+        <member name="F:WebApiPais.Controllers.CuentaUsuarioController._configuration">
+            <summary>
+            Defines the _configuration
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Controllers.CuentaUsuarioController.#ctor(Microsoft.AspNetCore.Identity.UserManager{WebApiPais.Models.ApplicationUser},Microsoft.AspNetCore.Identity.SignInManager{WebApiPais.Models.ApplicationUser},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.Controllers.CuentaUsuarioController"/> class.
+            </summary>
+            <param name="userManager">The userManager<see cref="T:Microsoft.AspNetCore.Identity.UserManager`1"/></param>
+            <param name="signInManager">The signInManager<see cref="T:Microsoft.AspNetCore.Identity.SignInManager`1"/></param>
+            <param name="configuration">The configuration<see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/></param>
+        </member>
+        <member name="M:WebApiPais.Controllers.CuentaUsuarioController.CrearUsuario(WebApiPais.Models.InformacionUsuario)">
+            <summary>
+            The CrearUsuario
+            </summary>
+            <param name="model">The model<see cref="T:WebApiPais.Models.InformacionUsuario"/></param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.CuentaUsuarioController.Logueo(WebApiPais.Models.InformacionUsuario)">
+            <summary>
+            The Logueo
+            </summary>
+            <param name="userInfo">The userInfo<see cref="T:WebApiPais.Models.InformacionUsuario"/></param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.CuentaUsuarioController.BuildToken(WebApiPais.Models.InformacionUsuario)">
+            <summary>
+            The BuildToken
+            </summary>
+            <param name="informacionUsuario">The informacionUsuario<see cref="T:WebApiPais.Models.InformacionUsuario"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>        
+        </member>
+        <member name="T:WebApiPais.Controllers.PaisController">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Controllers.PaisController" />
+            </summary>
+        </member>
+        <member name="F:WebApiPais.Controllers.PaisController.context">
+            <summary>
+            Defines the context
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Controllers.PaisController.#ctor(WebApiPais.Models.AplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.Controllers.PaisController"/> class.
+            </summary>
+            <param name="context">The context<see cref="T:WebApiPais.Models.AplicationDbContext"/></param>
+        </member>
+        <member name="M:WebApiPais.Controllers.PaisController.Get">
+            <summary>
+            The Get
+            </summary>
+            <returns>The <see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.PaisController.GetById(System.Int32)">
+            <summary>
+            The GetById
+            </summary>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.PaisController.Post(WebApiPais.Models.Pais)">
+            <summary>
+            The Post
+            </summary>
+            <param name="pais">The pais<see cref="T:WebApiPais.Models.Pais"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.PaisController.Post(WebApiPais.Models.Pais,System.Int32)">
+            <summary>
+            The Post
+            </summary>
+            <param name="pais">The pais<see cref="T:WebApiPais.Models.Pais"/></param>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.PaisController.Delete(System.Int32)">
+            <summary>
+            The Delete
+            </summary>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="T:WebApiPais.Controllers.ProvinciaController">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Controllers.ProvinciaController" />
+            </summary>
+        </member>
+        <member name="F:WebApiPais.Controllers.ProvinciaController.context">
+            <summary>
+            Defines the context
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Controllers.ProvinciaController.#ctor(WebApiPais.Models.AplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.Controllers.ProvinciaController"/> class.
+            </summary>
+            <param name="context">The context<see cref="T:WebApiPais.Models.AplicationDbContext"/></param>
+        </member>
+        <member name="M:WebApiPais.Controllers.ProvinciaController.Get(System.Nullable{System.Int32})">
+            <summary>
+            The Get
+            </summary>
+            <param name="PaisId">The PaisId<see cref="!:int?"/></param>
+            <returns>The <see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.ProvinciaController.GetById(System.Int32)">
+            <summary>
+            The GetById
+            </summary>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.ProvinciaController.Post(WebApiPais.Models.Provincia)">
+            <summary>
+            The Post
+            </summary>
+            <param name="provincia">The provincia<see cref="T:WebApiPais.Models.Provincia"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.ProvinciaController.Post(WebApiPais.Models.Provincia,System.Int32)">
+            <summary>
+            The Post
+            </summary>
+            <param name="provincia">The provincia<see cref="T:WebApiPais.Models.Provincia"/></param>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/></returns>
+        </member>
+        <member name="T:WebApiPais.Controllers.ValuesController">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Controllers.ValuesController" />
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Controllers.ValuesController.Get">
+            <summary>
+            The Get
+            </summary>
+            <returns>The <see cref="!:IEnumerable&lt;string&gt;"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            The Get
+            </summary>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:WebApiPais.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            The Post
+            </summary>
+            <param name="value">The value<see cref="T:System.String"/></param>
+        </member>
+        <member name="M:WebApiPais.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            The Put
+            </summary>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+            <param name="value">The value<see cref="T:System.String"/></param>
+        </member>
+        <member name="M:WebApiPais.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            The Delete
+            </summary>
+            <param name="id">The id<see cref="T:System.Int32"/></param>
+        </member>
+        <member name="T:WebApiPais.Models.AplicationDbContext">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Models.AplicationDbContext" />
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Models.AplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{WebApiPais.Models.AplicationDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.Models.AplicationDbContext"/> class.
+            </summary>
+            <param name="opcion">The opcion<see cref="T:Microsoft.EntityFrameworkCore.DbContextOptions`1"/></param>
+        </member>
+        <member name="P:WebApiPais.Models.AplicationDbContext.Paises">
+            <summary>
+            Gets or sets the Paises
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.AplicationDbContext.Provincias">
+            <summary>
+            Gets or sets the Provincias
+            </summary>
+        </member>
+        <member name="T:WebApiPais.Models.ApplicationUser">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Models.ApplicationUser" />
+            </summary>
+        </member>
+        <member name="T:WebApiPais.Models.InformacionUsuario">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Models.InformacionUsuario" />
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.InformacionUsuario.Email">
+            <summary>
+            Gets or sets the Email
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.InformacionUsuario.Password">
+            <summary>
+            Gets or sets the Password
+            </summary>
+        </member>
+        <member name="T:WebApiPais.Models.Pais">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Models.Pais" />
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Models.Pais.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.Models.Pais"/> class.
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Pais.Id">
+            <summary>
+            Gets or sets the Id
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Pais.Nombre">
+            <summary>
+            Gets or sets the Nombre
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Pais.Provincias">
+            <summary>
+            Gets or sets the Provincias
+            cada pais le corresponde un listado de provincias, para realizar la 
+            relación con la tabla de provincias.
+            </summary>
+        </member>
+        <member name="T:WebApiPais.Models.Provincia">
+            <summary>
+            Defines the <see cref="T:WebApiPais.Models.Provincia" />
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Provincia.Id">
+            <summary>
+            Gets or sets the Id
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Provincia.Nombre">
+            <summary>
+            Gets or sets the Nombre
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Provincia.PaisId">
+            <summary>
+            Gets or sets the PaisId
+            propiedad para establecer relacion con la tabla paises
+            </summary>
+        </member>
+        <member name="P:WebApiPais.Models.Provincia.Pais">
+            <summary>
+            Gets or sets the Pais
+            cada provincia le corresponde un pais.
+            </summary>
+        </member>
+        <member name="M:WebApiPais.Startup.ConfiguracionJson(Microsoft.AspNetCore.Mvc.MvcJsonOptions)">
+            <summary>
+            metodo que permite inorar la referencia ciclica entre modelos, en este caso entre pais y provincia.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:WebApiPais.ValidacionModelo.ValidateModelAttribute">
+            <summary>
+            Defines the <see cref="T:WebApiPais.ValidacionModelo.ValidateModelAttribute" />
+            </summary>
+        </member>
+        <member name="M:WebApiPais.ValidacionModelo.ValidateModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            The OnActionExecuting
+            </summary>
+            <param name="context">The context<see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext"/></param>
+        </member>
+        <member name="T:WebApiPais.ValidacionModelo.ValidationError">
+            <summary>
+            Defines the <see cref="T:WebApiPais.ValidacionModelo.ValidationError" />
+            </summary>
+        </member>
+        <member name="P:WebApiPais.ValidacionModelo.ValidationError.NombreCampo">
+            <summary>
+            Gets the Field
+            </summary>
+        </member>
+        <member name="P:WebApiPais.ValidacionModelo.ValidationError.MensajeValidacion">
+            <summary>
+            Gets the Message
+            </summary>
+        </member>
+        <member name="M:WebApiPais.ValidacionModelo.ValidationError.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.ValidacionModelo.ValidationError"/> class.
+            </summary>
+            <param name="field">The field<see cref="T:System.String"/></param>
+            <param name="message">The message<see cref="T:System.String"/></param>
+        </member>
+        <member name="T:WebApiPais.ValidacionModelo.ValidationFailedResult">
+            <summary>
+            Defines the <see cref="T:WebApiPais.ValidacionModelo.ValidationFailedResult" />
+            </summary>
+        </member>
+        <member name="M:WebApiPais.ValidacionModelo.ValidationFailedResult.#ctor(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApiPais.ValidacionModelo.ValidationFailedResult"/> class.
+            </summary>
+            <param name="modelState">The modelState<see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary"/></param>
+        </member>
+        <member name="T:WebApiPais.ValidacionModelo.ValidationResultModel">
+            <summary>
+            Defines the <see cref="T:WebApiPais.ValidacionModelo.ValidationResultModel" />
+            </summary>
+        </member>
+        <member name="P:WebApiPais.ValidacionModelo.ValidationResultModel.TipoMensaje">
+            <summary>
+            Mensaje con la definicion del tipo de validacion, en este caso para los campos.
+            </summary>
+        </member>
+        <member name="P:WebApiPais.ValidacionModelo.ValidationResultModel.Errores">
+            <summary>
+            almacena los datos del nombre del campo y su respectiva validacion que no cumplio.
+            </summary>
+        </member>
+        <member name="M:WebApiPais.ValidacionModelo.ValidationResultModel.#ctor(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            DUM: Metodo que permite obtener o capturar las validaciones del models con sus mensajes de validación <see cref="T:WebApiPais.ValidacionModelo.ValidationResultModel"/> class.
+            </summary>
+            <param name="modelState">objeto donde se encuentra el nombre de la propiedad y el mensaje de validación<see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary"/></param>
+        </member>
+    </members>
+</doc>
