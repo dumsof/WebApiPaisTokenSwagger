@@ -12,24 +12,38 @@ namespace WebApiPais
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            BuildWebHost(args).Run();
-            // var host = new WebHostBuilder()
-            //.UseKestrel()
-            //.UseContentRoot(Directory.GetCurrentDirectory())
-            //.UseIISIntegration()
-            //.UseStartup<Startup>()
-            //.Build();
 
-            // host.Run();
-        }
+
+        public static void Main(string[] args) =>
+            BuildWebHost(args).Run();
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
+
+        //public static void Main(string[] args)
+        //{
+        //    CreateWebHostBuilder(args).Build().Run();
+        //    // var host = new WebHostBuilder()
+        //    //.UseKestrel()
+        //    //.UseContentRoot(Directory.GetCurrentDirectory())
+        //    //.UseIISIntegration()
+        //    //.UseStartup<Startup>()
+        //    //.Build();
+        //    // host.Run();
+        //}
+
+        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        //   WebHost.CreateDefaultBuilder(args)
+        //       .UseStartup<Startup>();
+
+        ////public static IWebHost BuildWebHost(string[] args) =>
+        ////      WebHost.CreateDefaultBuilder(args)
+        ////      //    .UseContentRoot(Directory.GetCurrentDirectory())
+        ////      //    .UseIISIntegration()
+        ////            .UseStartup<Startup>()
+        ////            .Build();
+
     }
 }

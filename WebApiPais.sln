@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiPais", "WebApiPais\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pais.Utilidades", "Pais.Utilidades\Pais.Utilidades.csproj", "{15AB1B13-4B73-41A4-8823-E70AFDF04BB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiPais.Test", "WebApiPais.Test\WebApiPais.Test.csproj", "{9CBA07FC-1129-470E-A6F5-5A2F51A78510}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{15AB1B13-4B73-41A4-8823-E70AFDF04BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15AB1B13-4B73-41A4-8823-E70AFDF04BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15AB1B13-4B73-41A4-8823-E70AFDF04BB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CBA07FC-1129-470E-A6F5-5A2F51A78510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CBA07FC-1129-470E-A6F5-5A2F51A78510}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CBA07FC-1129-470E-A6F5-5A2F51A78510}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CBA07FC-1129-470E-A6F5-5A2F51A78510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

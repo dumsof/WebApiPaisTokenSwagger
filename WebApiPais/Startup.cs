@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -55,8 +57,10 @@ namespace WebApiPais
 
             
 
-            services.AddMvc().AddJsonOptions(ConfiguracionJson);
-
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(ConfiguracionJson);
+           
             //DUM: Inicio configuración swagger
             services.AddSwaggerGen(c =>
             {
@@ -68,7 +72,11 @@ namespace WebApiPais
                     TermsOfService = "No Aplica",
                     Contact = new Contact() { Name = "Talking Dotnet", Email = "contact@talkingdotnet.com", Url = "www.talkingdotnet.com" }
                 });
-            });
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });           
             //DUM: Final Configuración Swagger
         }
 
