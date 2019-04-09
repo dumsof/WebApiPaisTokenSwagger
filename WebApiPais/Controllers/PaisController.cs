@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,9 @@
     /// Defines the <see cref="PaisController" />
     /// </summary>
     [Produces("application/json")]
-    [Route("api/Pais")]
+    [Route("api/[controller]/[action]")]
     //definir el esquema de autorizacion, en este caso json web token
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class PaisController : Controller
     {
         /// <summary>
@@ -37,9 +38,18 @@
         /// </summary>
         /// <returns>The <see cref="IEnumerable{Pais}"/></returns>
         [HttpGet]
-        public IEnumerable<Pais> Get()
+        public IActionResult ObtenerPaises()
         {
-            return context.Paises.ToList();
+            List<Pais> pais = (from P in context.Paises
+                               select new Pais
+                               {
+                                   Id = P.Id,
+                                   Nombre = P.Nombre,
+                                   Provincias = new List<Provincia>()
+                               }).ToList();
+
+            RespuestaPais respuestaPais = new RespuestaPais { Mensaje = new Mensaje { Identificador = 1, Titulo = "Exito Generico", Contenido = "Éxito Generico" }, Pais = pais };
+            return this.StatusCode((int)HttpStatusCode.OK, respuestaPais);
         }
 
         /// <summary>
@@ -48,7 +58,7 @@
         /// <param name="id">The id<see cref="int"/></param>
         /// <returns>The <see cref="IActionResult"/></returns>
         [HttpGet("{id}", Name = "PaisCreado")]
-        public IActionResult GetById(int id)
+        public IActionResult ObtenerPaises(int id)
         {
             var pais = context.Paises.Include(p => p.Provincias).FirstOrDefault(c => c.Id == id);
             if (pais == null)
