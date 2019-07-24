@@ -75,6 +75,8 @@ namespace WebApiPais
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.DocInclusionPredicate((docName, description) => true);
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
                 c.IncludeXmlComments(xmlPath);
             });           
             //DUM: Final Configuración Swagger

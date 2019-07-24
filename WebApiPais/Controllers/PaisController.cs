@@ -1,5 +1,7 @@
 ﻿namespace WebApiPais.Controllers
 {
+    /*en swagger ProducesResponseType remplaza SwaggerResponse, la descripcion se especifica en response*/
+
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
@@ -34,10 +36,16 @@
         }
 
         /// <summary>
-        /// The Get
+        /// Obtener todos los paises.
         /// </summary>
         /// <returns>The <see cref="IEnumerable{Pais}"/></returns>
+        /// <response code="200">Operación realizada con éxito.</response>
+        /// <response code="404">No existen datos para la consulta realizada.</response>
+        /// <response code="500">Error inesperado.</response>
         [HttpGet]
+        [ProducesResponseType(typeof(RespuestaPais), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(RespuestaPais), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType(typeof(RespuestaPais), (int)HttpStatusCode.InternalServerError)]
         public IActionResult ObtenerPaises()
         {
             List<Pais> pais = (from P in context.Paises
@@ -45,7 +53,7 @@
                                {
                                    Id = P.Id,
                                    Nombre = P.Nombre,
-                                   Provincias = new List<Provincia>()
+                                   Provincias = context.Provincias.Where(c => c.PaisId == P.Id).ToList()
                                }).ToList();
 
             RespuestaPais respuestaPais = new RespuestaPais { Mensaje = new Mensaje { Identificador = 1, Titulo = "Exito Generico", Contenido = "Éxito Generico" }, Pais = pais };
