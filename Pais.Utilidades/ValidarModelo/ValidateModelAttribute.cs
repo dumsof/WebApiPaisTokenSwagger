@@ -11,7 +11,7 @@
     public class ValidateModelAttribute : ActionFilterAttribute
     {
         /// <summary>
-        /// The OnActionExecuting
+        /// Esto se ejecuta antes de cada acción, de la accion la cual se decora con el atributo ValidateModel.
         /// </summary>
         /// <param name="context">The context<see cref="ActionExecutingContext"/></param>
         public override void OnActionExecuting(ActionExecutingContext context)
