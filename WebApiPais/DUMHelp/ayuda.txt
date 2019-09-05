@@ -2,3 +2,10 @@
 --se implementa swagger, esto con el siguiente comando
 PM> Install-Package Swashbuckle.AspNetCore
 
+--COMO CREAR LAS CLASES DEL MODELO PARTIENDO DE LA BASE DE DATOS.
+https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/existing-db
+
+--con este comando se crea la clase.
+Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+swagger/index.html
